@@ -1,0 +1,373 @@
+body{
+    font-family: 'VT323', monospace;
+    background-image: url(Imagenes/Fondo-body.webp);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    width: 1440px;
+    margin: 25px auto 0 auto;
+    padding: 15px 50px 10px 50px;
+    color: white;
+    box-sizing: border-box;  
+    justify-content: center;
+}
+
+.espacio-encabezado{
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    font-size: 4em;
+}
+
+.espacio-logos{
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.espacio-logos img{
+    height: 80px;
+    margin: 0 12.5px;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgb(0, 255, 34),
+                0 0 10px rgb(0, 255, 34),
+                0 0 15px rgb(0, 255, 34),
+                0 0 20px rgb(0, 255, 34);
+    animation: lucesrgb 5s linear infinite;
+}
+
+main{
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.ingreso{
+    margin: 0px 20px;
+    width: 60%;
+    height: 630px;
+    display: block;
+    text-align: center;
+}
+
+.espacio-mensaje{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 500px;
+    padding: 5px 5px 5px 5px;
+}
+
+.espacio-mensaje::after{
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 200%;
+    background-image: conic-gradient(transparent,transparent,rgb(255, 0, 204));
+    animation: rotar 6s linear infinite;
+    animation-delay: -3s;
+    z-index: 1;
+}
+
+.espacio-mensaje::before{
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 200%;
+    background-image: conic-gradient(transparent,transparent,cyan);
+    animation: rotar 6s linear infinite;
+}
+
+#mensaje1{
+    resize: none;
+    background: linear-gradient(45deg,black,rgb(61, 60, 60));
+    border-radius: 15px;
+    width: 100%;
+    min-height: 500px;
+    padding: 20px 20px;
+    font-size: 40px;
+    color: rgb(40, 228, 11);
+    border-color: black;
+    z-index: 2;
+    font-family: 'VT323', monospace;
+    box-sizing: border-box;
+}
+
+#mensaje1::placeholder{
+    color: rgb(40, 228, 11);
+    font-family: 'VT323', monospace;
+}
+
+.advertencia{
+    margin: 5px auto 10px auto;
+    padding: 5px 10px;
+}
+
+.vector{
+    color: white;
+}
+
+.nota{
+    font-size: 25px;
+    color: white;
+}
+
+.botones{
+    display: flex;
+    margin: 5px auto;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.botones button{
+    margin: 5px 20px;
+    padding: 3px 3px;
+    width: 45%;
+    height: 67px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'VT323', monospace;    
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.boton-encriptar{
+    background-image: radial-gradient(#fbff00 10%, #ffae00 100%);
+    color:black;
+    border: 1px solid;
+    border-color: white;    
+    box-sizing: border-box;
+    letter-spacing: 0.07em;
+}
+
+.boton-desencriptar{
+    background-image: linear-gradient(45deg,rgb(0, 0, 0),rgb(48, 48, 48),rgb(0, 0, 0));
+    color:white;
+    border: 1px solid;
+    border-color: rgb(0, 255, 242);
+    box-sizing: border-box;
+    letter-spacing: 0.07em;
+}
+
+.botones button:hover{
+    color: black;
+    border-color: black;
+    background-image: radial-gradient(rgb(251, 255, 0),rgb(51, 255, 0));
+    box-shadow: 0 0 25px rgb(51, 255, 0);
+    letter-spacing: 0.15em;
+}
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: 30%;
+    padding: 10px;
+    background-image: url("Imagenes/marco-botones.gif");
+    background-size: 100% 95.5%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+}
+
+#mensaje2{
+    position: relative;
+    resize: none;
+    background: linear-gradient(45deg,black,rgb(61, 60, 60));
+    border-radius: 15px;
+    width: 100%;
+    padding: 20px 20px 50px 20px;
+    font-size: 35px;
+    color: rgb(40, 228, 11);
+    border-color: black;
+    font-family: 'VT323', monospace;
+    box-sizing: border-box;
+}
+
+#mensaje2::placeholder{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: white;
+    width: 95%;
+    height: 96%;
+    background-image: url(Imagenes/Muñeco.png), linear-gradient(45deg,black,rgb(61, 60, 60));
+    background-repeat: no-repeat;   
+    background-position: center;
+    box-sizing: border-box;
+}
+
+.espacio-boton-resultado{
+    position: relative;
+    top: -50px;
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+.boton-copiar{
+    position: relative;
+    width: 70%;
+    height: 100%;
+    vertical-align: bottom;
+    border-radius: 10px;
+    font-size: 28px;
+    font-family: 'VT323', monospace; 
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+    cursor: pointer;
+    background-image: linear-gradient(45deg,rgb(0, 0, 0),rgb(48, 48, 48),rgb(0, 0, 0));
+    color: white;
+    border-color: white;
+}
+
+.boton-copiar:hover{
+    position: relative;
+    border-color: black;
+    background-image: radial-gradient(rgb(82, 79, 79),rgb(0, 0, 0));
+    box-shadow: 0 0 35px rgb(0, 140, 255);
+    letter-spacing: 0.2em;
+    font-weight: lighter;
+    color: white;
+}
+
+footer{
+    display: flex;
+    margin: 2.5em auto;
+    width: 1440px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    display: flex;
+    margin: 0 50px;
+    height: 50%;
+    align-items: center;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+footer a img{
+    height: 60px;
+    margin: 5px 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgb(0, 255, 34),
+                0 0 10px rgb(0, 255, 34),
+                0 0 15px rgb(0, 255, 34),
+                0 0 20px rgb(0, 255, 34);
+    animation: lucesrgb 5s linear infinite;
+}
+
+@keyframes rotar{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes lucesrgb{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+@media screen and (min-width:1024px){
+    .resultado, #mensaje2{
+        min-height: 600px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    main, footer, header{
+        flex-direction: column;
+    }
+    
+    main{
+        align-items: center;
+    }
+
+    header, main, footer{
+        width: auto;
+    }
+
+    .espacio-encabezado{
+        font-size: 3.5em;
+    }
+
+    .ingreso, .resultado{
+        width: 90%;
+        height: auto;
+    }
+
+    #mensaje2{
+        height: 150px;
+    }
+
+    #mensaje2::placeholder{
+        background-image: linear-gradient(45deg,black,rgb(61, 60, 60));
+    }
+}
+
+@media screen and (max-width:767px) {
+    main, footer, .botones, header, .botones{
+        flex-direction: column;
+    }
+    
+    main{
+        align-items: center;
+    }
+
+    header, main, footer{
+        width: auto;
+    }
+
+    .espacio-encabezado{
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .ingreso, .resultado{
+        width: 90%;
+        height: auto;
+    }
+
+    .botones button{
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    #mensaje2{
+        height: 150px;
+    }
+
+    #mensaje2::placeholder{
+        background-image: linear-gradient(45deg,black,rgb(61, 60, 60));
+    }
+
+}

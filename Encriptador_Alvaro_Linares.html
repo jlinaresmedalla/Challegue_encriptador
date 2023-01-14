@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encriptador_Alura</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style-encrip.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <div class="espacio-logos">
+                <img src="Imagenes/logo-negro.png" alt="logo-alura" class="logo-alura">
+                <img src="Imagenes/logo.oneoracle.JPG" alt="logo-one-oracle" class="logo-oracle">
+            </div>
+
+            <div class="espacio-encabezado">
+                <h1>Encriptador de Texto Alura</h1>
+            </div>
+        </header>
+
+        <main>
+            <section class="ingreso">
+                <div class="espacio-mensaje">
+                    <textarea type="text" pattern="[a-z]" cols="70" rows="10" id="mensaje1" class="mensaje" required placeholder="Ingrese texto aqui..."></textarea>
+                </div>
+                <div class="advertencia">
+                    <img src="Imagenes/Vector.png" alt="advertencia" class="vector">
+                    <label class="nota">Sólo letras minúsculas sin acentos</label>
+                </div>
+                <div class="botones">
+                    <button onclick="boton_encriptar(mensaje1.value)" class="boton-encriptar">ENCRIPTAR</button>
+                    <button onclick="boton_desencriptar(mensaje1.value)" class="boton-desencriptar">DESENCRIPTAR</button>
+                </div>
+             </section>
+             <section class="resultado">
+                    <textarea cols="70" rows="10" id="mensaje2" class="mensaje" placeholder="Ningún mensaje fue encontrado" oninput="resizeTextarea(this)"></textarea>
+                    <div class="espacio-boton-resultado">
+                        <input class="boton-copiar" onclick="copiar_portapapeles()" type="submit" value="COPIAR TEXTO">
+                    </div>
+             </section>
+        </main>
+
+        <footer>
+            <a href="https://github.com/jlinaresmedalla">
+                <img src="Imagenes/GitHub-Mark.png" alt="logo-github" class="logo-github">jlinaresmedalla
+            </a>
+            <a href="https://www.linkedin.com/in/alvarolinaresmedalla/">
+                <img src="Imagenes/logo-linkedin.jpg" alt="logo-linkedin" class="logo-linkedin">alvaro linares medalla
+            </a>
+        </footer>
+    </body>
+
+</html>
+
+<script>
+    
+    function boton_encriptar(valor){
+        let encriptado = valor.replace(/e/gi,"enter").replace(/i/gi,"imes").replace(/a/gi,"ai").replace(/o/gi,"ober").replace(/u/gi,"ufat");
+        textarea2.value = encriptado;
+        resizeTextarea(textarea2);
+        textarea1.value="";
+    }
+
+    function boton_desencriptar(x){
+        let desencriptado = x.replace(/enter/gi,"e").replace(/imes/gi,"i").replace(/ai/gi,"a").replace(/ober/gi,"o").replace(/ufat/gi,"u");
+        textarea2.value = desencriptado;
+        resizeTextarea(textarea2);
+        textarea1.value="";
+    }
+
+    function copiar_portapapeles(){
+        let textoCopiado = document.getElementById('mensaje2');
+        textoCopiado.select();
+        textoCopiado.setSelectionRange(0,99999);
+        document.execCommand('copy');
+    }
+
+    var textarea1 = document.getElementById("mensaje1");
+    textarea1.addEventListener("input", function(){
+        this.style.height = "auto";
+        this.style.height = (this.scrollHeight) + "px";
+    }, false);
+
+    var textarea2 = document.getElementById("mensaje2");
+
+    function resizeTextarea(textarea){
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight+'px';
+    }
+
+</script>
